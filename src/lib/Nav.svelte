@@ -8,10 +8,7 @@
 <style>
 	ul {
 		display: flex;
-		margin: 0;
-		padding: 0;
 		flex: row;
-		list-style: none;
 	}
 	li {
 		margin: 5px;

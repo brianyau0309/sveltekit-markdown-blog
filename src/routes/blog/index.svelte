@@ -23,6 +23,10 @@
 	export let posts;
 </script>
 
+<svelte:head>
+	<title>Blog</title>
+</svelte:head>
+
 <ul>
 	{#each posts as { path, metadata }}
 		<a href={`blog/${path.replace('.md', '')}`}>{metadata.title}</a>

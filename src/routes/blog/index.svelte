@@ -1,5 +1,5 @@
 <script context="module">
-	const allPosts = import.meta.glob('./blog/*.{md,svx}');
+	const allPosts = import.meta.glob('./*.md');
 	const body = [];
 	for (const path in allPosts) {
 		body.push(
@@ -25,6 +25,6 @@
 
 <ul>
 	{#each posts as { path, metadata }}
-<a href={`${path.replace(/\.md|\.svx/, '')}`}>{metadata.title}</a>
+		<a href={`blog/${path.replace('.md', '')}`}>{metadata.title}</a>
 	{/each}
 </ul>

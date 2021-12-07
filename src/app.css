@@ -2,3 +2,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+	@variants hover {
+		.text-color-primary {
+			@apply text-primary dark:text-darkMode-primary;
+		}
+
+		.text-color-secondary {
+			@apply text-secondary dark:text-darkMode-secondary;
+		}
+
+		.border-color-primary {
+			@apply border-primary dark:border-darkMode-primary;
+		}
+
+		.border-color-secondary {
+			@apply border-secondary dark:border-darkMode-secondary;
+		}
+
+		.bg-color-primary {
+			@apply bg-primary dark:bg-darkMode-primary;
+		}
+
+		.bg-color-secondary {
+			@apply bg-secondary dark:bg-darkMode-secondary;
+		}
+	}
+}

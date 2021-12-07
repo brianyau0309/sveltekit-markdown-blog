@@ -1,34 +1,25 @@
 <script context="module">
 	const allPosts = import.meta.glob('./*.md');
-	const body = [];
-	for (const path in allPosts) {
-		body.push(
-			allPosts[path]().then(({ metadata }) => {
-				return { path, metadata };
-			})
-		);
-	}
-
 	export const load = async () => {
-		const posts = await Promise.all(body);
-		return {
-			props: {
-				posts
-			}
-		};
+		const posts = await Promise.all(
+			Object.keys(allPosts).map((path) =>
+				allPosts[path]().then(({ metadata }) => ({ path, metadata }))
+			)
+		);
+		return { props: { posts } };
 	};
 </script>
 
 <script>
 	export let posts;
+	import { BlogList } from '$lib/components/Blog';
+	import { formTitle } from '$lib/utils';
 </script>
 
 <svelte:head>
-	<title>Blog</title>
+	<title>{formTitle('Blog')}</title>
 </svelte:head>
 
-<ul>
-	{#each posts as { path, metadata }}
-		<a href={`blog/${path.replace('.md', '')}`}>{metadata.title}</a>
-	{/each}
-</ul>
+<div>
+	<BlogList {posts} />
+</div>

@@ -3,6 +3,7 @@ layout: blog
 title: Building a blog with SvelteKit!
 createdAt: 2021-12-04
 draft: false
+category: FRONTEND
 tags:
   - sveltekit
   - svelte

@@ -3,6 +3,7 @@ layout: blog
 title: Learning SEO in blog
 createdAt: 2021-12-05
 draft: false
+category: SEO
 tags:
   - blog
   - seo

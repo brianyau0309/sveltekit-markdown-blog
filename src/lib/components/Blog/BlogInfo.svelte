@@ -1,11 +1,12 @@
 <script>
-	export let className = '',
-		author,
-		createdAt,
-		lastUpdated;
+	export let className = '';
+	export let category;
+	export let createdAt;
+	export let lastUpdated;
 
 	import cx from 'classnames';
 	import { formatDate as fd, curry } from '$utils';
+	import Button from '$lib/ui/core/Button/Button.svelte';
 
 	const formatDate = curry(fd)('YYYY-MM-DD', 'MMM DD YYYY');
 </script>
@@ -24,7 +25,17 @@
 		className
 	)}
 >
-	<div>{author ?? ''}</div>
+	<!-- Reminder: rebuild into a component -->
+	<Button
+		className={cx(
+			'text-secondary',
+			'bg-category',
+			`bg-cate-${String(category).toLowerCase()}`
+		)}
+	>
+		{category}
+	</Button>
+
 	<div>
 		<span>{lastUpdated ? 'Last Updated ' : 'Published '}</span>
 		<span>

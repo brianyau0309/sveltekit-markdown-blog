@@ -1,11 +1,11 @@
 <script>
-	export let title,
-		author,
-		createdAt,
-		lastUpdated,
-		tags,
-		blogContent,
-		blogCover;
+	export let title;
+	export let category;
+	export let createdAt;
+	export let lastUpdated;
+	export let tags;
+	export let blogContent;
+	export let blogCover;
 
 	import cx from 'classnames';
 	import { TagList } from '$lib/components/Tag';
@@ -21,22 +21,19 @@
 	<BlogTitle {title} />
 
 	<!-- Author & Date -->
-	<BlogInfo {author} {createdAt} {lastUpdated} />
+	<BlogInfo {...{ category, createdAt, lastUpdated }} />
 
 	<!-- Tags -->
 	<TagList
-		{tags}
 		className={cx(
-			'lg:justify-end',
-			'px-10',
-			'lg:px-24',
+			'mx-10',
+			'lg:mx-24',
 			'mt-3',
 			'mb-10',
 			'lg:mb-14',
 			'font-medium'
 		)}
 		tagClassName={cx('mr-1.5', 'lg:mr-0', 'lg:ml-2', 'text-sm', 'lg:text-lg')}
-		lBlur={cx('text-3xl', 'left-0', 'bg-gradient-to-l', 'w-8')}
-		rBlur={cx('text-3xl', 'right-0', 'bg-gradient-to-r', 'w-12')}
+		{tags}
 	/>
 </div>

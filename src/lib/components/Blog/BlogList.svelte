@@ -1,5 +1,6 @@
 <script>
 	export let posts;
+	export let searchQuery;
 	import cx from 'classnames';
 	import BlogCard from './BlogCard.svelte';
 
@@ -12,9 +13,12 @@
 	const filteredPosts = posts
 		.filter(({ metadata }) => !metadata.draft)
 		.sort(sortByDate);
+
+	/* Reminder: build searchQuery parser, filter post, slice post and infinite scroll */
+	$: console.log(searchQuery);
 </script>
 
-<ul class={cx('flex', 'flex-col', 'mx-8', 'lg:w-1/2', 'lg:m-auto')}>
+<ul class={cx('flex', 'flex-col')}>
 	{#each filteredPosts as post}
 		<BlogCard {post} />
 	{/each}

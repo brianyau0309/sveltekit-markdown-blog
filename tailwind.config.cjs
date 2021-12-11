@@ -1,5 +1,6 @@
 const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 const config = {
 	mode: 'jit',
@@ -8,37 +9,53 @@ const config = {
 
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ['Readex Pro', ...defaultTheme.fontFamily.sans]
+			},
 			colors: {
 				orange: colors.orange,
-				primary: '#FFF7ED',
-				secondary: '#111827',
-				darkMode: {
-					primary: '#111827',
-					secondary: '#F9FAFB'
+				primary: {
+					DEFAULT: '#FFF7ED',
+					darkMode: '#111827'
+				},
+				secondary: {
+					DEFAULT: '#111827',
+					darkMode: '#F9FAFB'
+				},
+				category: {
+					DEFAULT: '#667EEA',
+					frontend: '#065F46',
+					devops: '#000'
 				}
 			},
 			textColor: {
-				primary: '#111827',
-				secondary: '#F9FAFB',
-				darkMode: {
-					primary: '#F9FAFB',
-					secondary: '#111827'
+				primary: {
+					DEFAULT: '#111827',
+					darkMode: '#F9FAFB'
+				},
+				secondary: {
+					DEFAULT: '#F9FAFB',
+					darkMode: '#111827'
 				}
 			},
 			borderColor: {
-				primary: '#111827',
-				secondary: '#F9FAFB',
-				darkMode: {
-					primary: '#F9FAFB',
-					secondary: '#111827'
+				primary: {
+					DEFAULT: '#111827',
+					darkMode: '#F9FAFB'
+				},
+				secondary: {
+					DEFAULT: '#F9FAFB',
+					darkMode: '#111827'
 				}
 			},
 			backgroundColor: {
-				primary: '#FFF7ED',
-				secondary: '#111827',
-				darkMode: {
-					primary: '#111827',
-					secondary: '#F9FAFB'
+				primary: {
+					DEFAULT: '#FFF7ED',
+					darkMode: '#111827'
+				},
+				secondary: {
+					DEFAULT: '#111827',
+					darkMode: '#F9FAFB'
 				}
 			}
 		}

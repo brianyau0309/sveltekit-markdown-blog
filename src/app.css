@@ -3,30 +3,38 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-	@variants hover {
-		.text-color-primary {
-			@apply text-primary dark:text-darkMode-primary;
+@layer base {
+	@variants hover, focus {
+		.text-pcolor {
+			@apply text-primary dark:text-primary-darkMode;
 		}
 
-		.text-color-secondary {
-			@apply text-secondary dark:text-darkMode-secondary;
+		.text-scolor {
+			@apply text-secondary dark:text-secondary-darkMode;
 		}
 
-		.border-color-primary {
-			@apply border-primary dark:border-darkMode-primary;
+		.border-pcolor {
+			@apply border-primary dark:border-primary-darkMode;
 		}
 
-		.border-color-secondary {
-			@apply border-secondary dark:border-darkMode-secondary;
+		.border-scolor {
+			@apply border-secondary dark:border-secondary-darkMode;
 		}
 
-		.bg-color-primary {
-			@apply bg-primary dark:bg-darkMode-primary;
+		.bg-pcolor {
+			@apply bg-primary dark:bg-primary-darkMode;
 		}
 
-		.bg-color-secondary {
-			@apply bg-secondary dark:bg-darkMode-secondary;
+		.bg-scolor {
+			@apply bg-secondary dark:bg-secondary-darkMode;
 		}
 	}
+}
+
+.bg-cate-frontend {
+	@apply bg-category-frontend;
+}
+
+.bg-cate-devops {
+	@apply bg-category-devops;
 }

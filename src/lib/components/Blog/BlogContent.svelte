@@ -8,7 +8,7 @@
 	class={cx(
 		'p-10',
 		'lg:py-60',
-		'lg:px-72',
+		'lg:px-24',
 		'text-lg',
 		'lg:text-xl',
 		'break-words'

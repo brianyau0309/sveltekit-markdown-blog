@@ -1,6 +1,5 @@
-import { writable } from 'svelte/store';
-import { persistStore } from '$utils';
 import { browser } from '$app/env';
+import { persistStore } from '$utils';
 
 const createDarkMode = () => {
 	if (browser) {
@@ -9,8 +8,7 @@ const createDarkMode = () => {
 		).matches;
 
 		const { subscribe, update } = persistStore({
-			key: 'darkMode',
-			type: writable,
+			keyName: 'darkMode',
 			/* Depends on prefers-color-scheme */
 			defaultObj: { active: prefersDark ? true : false }
 		});

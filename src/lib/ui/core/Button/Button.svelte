@@ -1,7 +1,7 @@
 <script>
 	export let className = '';
-	import { createEventDispatcher } from 'svelte';
 	import cx from 'classnames';
+	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
 </script>
 

@@ -3,7 +3,7 @@ const titlePrefix = titlePrefixEnv ? String(titlePrefixEnv) : '';
 
 /**
  * Form a page title with prefix string
- * @param {String} title 
+ * @param {String} title
  * @returns {String}
  */
 const formTitle = (title) =>

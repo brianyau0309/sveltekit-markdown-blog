@@ -1,7 +1,7 @@
 <script>
 	export let draft;
 	if (draft) throw new Error('It is a draft');
-	/* Reminder: build error page */
+	/* TODO: build error page */
 
 	export let title;
 	export let category;
@@ -12,7 +12,8 @@
 	import { formTitle } from '$lib/utils';
 	import { BlogCover, BlogContent } from '$lib/components/Blog';
 
-	let blogCover, blogContent;
+	let blogCover;
+	let blogContent;
 	onMount(() => blogCover.scrollIntoView());
 </script>
 
@@ -21,13 +22,11 @@
 </svelte:head>
 
 <div>
-	<!-- Blog Cover -->
 	<BlogCover
 		bind:blogCover
 		{...{ blogContent, title, category, createdAt, lastUpdated, tags }}
 	/>
 
-	<!-- Blog Content -->
 	<BlogContent bind:blogContent>
 		<slot />
 	</BlogContent>

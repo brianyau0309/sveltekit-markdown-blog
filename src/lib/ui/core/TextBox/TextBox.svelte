@@ -4,48 +4,53 @@
 	export let labelText = '';
 	export let labelTextSmall = undefined;
 	export let textField;
+	export let debounceTimeout = 0;
 	import cx from 'classnames';
 
 	let isFocused;
+	let timer;
+	const debounce = (v) => {
+		clearTimeout(timer);
+		timer = setTimeout(() => {
+			value = v;
+		}, debounceTimeout);
+	};
 </script>
 
 <div>
 	<span
-		class={cx(
-			'absolute',
-			'py-2',
-			'px-4',
-			'text-gray-500',
-			'transition-all',
-			isFocused || value
-				? cx('pt-1.5', 'text-xs', 'cursor-auto')
-				: cx('pt-3', 'text-lg', 'cursor-text')
-		)}
+		class={isFocused || value ? 'minimize' : 'show'}
 		on:click={() => textField.focus()}
 		>{(isFocused || value) && labelTextSmall !== undefined
 			? labelTextSmall
 			: labelText}
 	</span>
 	<input
-		class={cx(
-			'text-pcolor',
-			'bg-pcolor',
-			'border-gray-700',
-			'focus:border-blue-300',
-			'w-full',
-			'border-2',
-			'focus:outline-none',
-			'rounded',
-			'pt-5',
-			'py-2',
-			'px-4',
-			'leading-tight',
-			className
-		)}
+		class={cx('text-pcolor', 'bg-pcolor', className)}
 		type="text"
 		on:focus={() => (isFocused = true)}
 		on:blur={() => (isFocused = false)}
-		bind:value={value}
+		on:input={(e) => debounce(e.target.value)}
+		{value}
 		bind:this={textField}
 	/>
 </div>
+
+<style type="postcss">
+	span {
+		@apply absolute py-2 px-4 text-gray-500 transition-all;
+	}
+	span.show {
+		@apply pt-3 lg:text-lg cursor-text;
+	}
+	span.minimize {
+		@apply pt-1.5 text-xs cursor-auto;
+	}
+	input {
+		@apply border-gray-700 w-full border-2 rounded py-2 px-4 pt-5 text-sm leading-tight;
+	}
+
+	input:focus {
+		@apply border-blue-300 outline-none;
+	}
+</style>

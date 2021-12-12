@@ -5,19 +5,29 @@
 	export let tagClassName = '';
 	import cx from 'classnames';
 	import { TagButton } from '$components/Tag';
-	import { isOverflown, isScrolled } from '$lib/utils';
+	import { isOverflown, isScrolled, isScrollEnd } from '$lib/utils';
+	import { browser } from '$app/env';
 
 	let tagList;
-	$: isTagListOverflown = tagList && isOverflown(tagList);
-	$: isTagListScrolled = tagList && isScrolled(tagList);
+	let isTagListOverflown;
+	let isTagListScrolled;
+	let isTagListScrollEnd;
+
+	const checkScroll = (ele) => {
+		const opts = { x: true, y: false };
+		if (browser && ele) {
+			isTagListOverflown = isOverflown(ele, opts);
+			isTagListScrolled = isScrolled(ele, opts);
+			isTagListScrollEnd = isScrollEnd(ele, opts);
+		}
+	};
+
+	$: checkScroll(tagList);
 </script>
 
 <div
 	bind:this={tagList}
-	on:scroll={() => {
-		isTagListScrolled = isScrolled(tagList);
-		isTagListOverflown = isOverflown(tagList);
-	}}
+	on:scroll={() => checkScroll(tagList)}
 	class={cx(
 		'flex',
 		{ 'flex-wrap': !scroll },
@@ -26,7 +36,9 @@
 		'no-scrollbar',
 		isTagListOverflown
 			? isTagListScrolled
-				? 'blur-edge'
+				? isTagListScrollEnd
+					? 'blur-left-edge'
+					: 'blur-edge'
 				: 'blur-right-edge'
 			: '',
 		className
@@ -60,10 +72,27 @@
 		);
 	}
 
+	.blur-left-edge {
+		mask-image: linear-gradient(
+			transparent,
+			theme('backgroundColor.primary.DEFAULT') 10%,
+			100%,
+			transparent 100%
+		);
+
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent,
+			theme('backgroundColor.primary.DEFAULT') 10%,
+			100%,
+			transparent 100%
+		);
+	}
+
 	.blur-right-edge {
 		mask-image: linear-gradient(
 			transparent,
-			theme('backgroundColor.primary.DEFAULT') 0%,
+			0%,
 			theme('backgroundColor.primary.DEFAULT') 90%,
 			transparent 100%
 		);
@@ -71,7 +100,7 @@
 		-webkit-mask-image: linear-gradient(
 			to right,
 			transparent,
-			theme('backgroundColor.primary.DEFAULT') 0%,
+			0%,
 			theme('backgroundColor.primary.DEFAULT') 90%,
 			transparent 100%
 		);

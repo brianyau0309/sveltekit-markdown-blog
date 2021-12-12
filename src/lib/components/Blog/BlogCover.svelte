@@ -17,23 +17,20 @@
 	on:click={() => blogContent.scrollIntoView({ behavior: 'smooth' })}
 	class={cx('w-full', 'min-h-screen', 'font-bold', 'flex', 'flex-col')}
 >
-	<!-- Title -->
 	<BlogTitle {title} />
 
-	<!-- Author & Date -->
 	<BlogInfo {...{ category, createdAt, lastUpdated }} />
 
-	<!-- Tags -->
 	<TagList
 		className={cx(
 			'mx-10',
 			'lg:mx-24',
-			'mt-3',
+			'mt-2',
 			'mb-10',
 			'lg:mb-14',
 			'font-medium'
 		)}
-		tagClassName={cx('mr-1.5', 'lg:mr-0', 'lg:ml-2', 'text-sm', 'lg:text-lg')}
+		tagClassName={cx('text-sm', 'lg:text-lg')}
 		{tags}
 	/>
 </div>

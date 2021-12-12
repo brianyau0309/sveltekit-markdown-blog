@@ -1,18 +1,18 @@
 <script>
-	export let tag;
+	export let category;
 	export let className = '';
 	import { Button } from '$lib/ui/core/Button';
 	import { searchQuery } from '$stores';
 	import { goto } from '$app/navigation';
 
 	const handleClick = () => {
-		const q = `tag:${tag}`;
-		const tagPage = `/blog/?q=${encodeURIComponent(q)}`;
+		const q = `category:${category}`;
+		const catePage = `/blog/?q=${encodeURIComponent(q)}`;
 		searchQuery.set(q);
-		goto(tagPage, { replaceState: true });
+		goto(catePage, { replaceState: true });
 	};
 </script>
 
 <Button {className} on:click={handleClick}>
-	#{tag}
+	{category}
 </Button>

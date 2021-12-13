@@ -49,7 +49,6 @@
 	input {
 		@apply border-gray-700 w-full border-2 rounded py-2 px-4 pt-5 text-sm leading-tight;
 	}
-
 	input:focus {
 		@apply border-blue-300 outline-none;
 	}

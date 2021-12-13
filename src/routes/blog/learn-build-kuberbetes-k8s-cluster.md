@@ -2,6 +2,7 @@
 layout: blog
 title: Setting up a Kubernetes Cluster😍
 createdAt: 2021-12-05
+lastUpdated: 2021-12-11
 draft: false
 category: DEVOPS
 tags:

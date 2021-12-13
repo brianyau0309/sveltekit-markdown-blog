@@ -11,6 +11,6 @@
 		bind:value={$searchQuery}
 		labelText="Search e.g. category:frontend"
 		labelTextSmall="Search"
-		debounceTimeout={750}
+		debounceTimeout={500}
 	/>
 </div>

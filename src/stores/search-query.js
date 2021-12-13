@@ -1,32 +1,31 @@
 import { browser } from '$app/env';
-import { writable } from 'svelte/store';
+import { goto } from '$app/navigation';
+import { page } from '$app/stores';
 
-/* FIXME: History issues
- * Go back history with search query won't change the store
- * Should change the store and list appropriate results
- */
-const createSearchQuery = () => {
+const createSearchQuery = (prop) => {
 	if (browser) {
-		const { subscribe, set } = writable(null);
+		let searchQuery = null;
 
-		subscribe((searchQuery) => {
-			const params = new URLSearchParams(location.search);
-			const q = params.get('q');
-			if (searchQuery === null && q) searchQuery = q;
-			if (searchQuery !== q) {
-				if (!searchQuery) params.delete('q');
-				else params.set('q', searchQuery);
+		return {
+			subscribe: (set) =>
+				page.subscribe((p) => {
+					set(p.query.get(prop));
+				}),
+			set: (value, { replaceState = false } = {}) => {
+				/* Don't update if same as incoming value */
+				if (searchQuery === value) return;
+				searchQuery = value ?? '';
+				const params = new URLSearchParams(location.search);
+				// Remove ?q= if searchQuery not found */
+				if (searchQuery) params.set(prop, searchQuery);
+				else params.delete(prop);
+				// Form path, redirect to path and push to history */
 				const query = params.toString();
-				window.history.pushState(
-					window.history.state,
-					'',
-					`${location.pathname}${query ? `?${query}` : ''}`
-				);
+				const path = `/blog${query ? `?${query}` : ''}`;
+				goto(path, { keepfocus: true, replaceState, noscroll: true });
 			}
-		});
-
-		return { subscribe, set, reset: () => set(null) };
+		};
 	}
 };
 
-export const searchQuery = createSearchQuery();
+export const searchQuery = createSearchQuery('q');

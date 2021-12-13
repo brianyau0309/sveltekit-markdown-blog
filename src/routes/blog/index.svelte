@@ -12,25 +12,16 @@
 
 <script>
 	export let posts;
-	import cx from 'classnames';
-	import { BlogList } from '$lib/components/Blog';
 	import { formTitle } from '$lib/utils';
-	import SearchBox from '$lib/components/SearchBox/SearchBox.svelte';
-	import { onMount } from 'svelte';
-	import { searchQuery } from '$stores';
-	import { page } from '$app/stores';
-
-	// FIXME: History problem related?
-	onMount(() => {
-		$searchQuery = $page.query.get('q');
-	});
+	import { BlogList } from '$components/Blog';
+	import { SearchBox } from '$components/SearchBox';
 </script>
 
 <svelte:head>
 	<title>{formTitle('Blog')}</title>
 </svelte:head>
 
-<div class={cx('mx-8', 'lg:w-1/2', 'lg:m-auto')}>
+<div class="mx-8 lg:w-1/2 lg:m-auto">
 	<SearchBox className="my-2" />
 	<BlogList {posts} />
 </div>

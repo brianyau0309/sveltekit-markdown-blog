@@ -24,4 +24,5 @@
 <div class="mx-8 lg:w-1/2 lg:m-auto">
 	<SearchBox className="my-2" />
 	<BlogList {posts} />
+	<slot />
 </div>

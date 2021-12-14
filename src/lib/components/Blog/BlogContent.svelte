@@ -1,5 +1,5 @@
 <script>
-	export let blogContent;
+	export let blogContent = undefined;
 	import cx from 'classnames';
 </script>
 

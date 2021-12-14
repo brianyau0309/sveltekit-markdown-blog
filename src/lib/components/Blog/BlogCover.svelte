@@ -4,8 +4,8 @@
 	export let createdAt;
 	export let lastUpdated;
 	export let tags;
-	export let blogContent;
-	export let blogCover;
+	export let blogContent = undefined;
+	export let blogCover = undefined;
 
 	import cx from 'classnames';
 	import { TagList } from '$lib/components/Tag';

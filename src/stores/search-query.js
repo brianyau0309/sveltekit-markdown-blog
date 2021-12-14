@@ -2,7 +2,7 @@ import { browser } from '$app/env';
 import { goto } from '$app/navigation';
 import { page } from '$app/stores';
 
-const createSearchQuery = (prop) => {
+const createSearchQuery = (prop, pathname = null) => {
 	if (browser) {
 		let searchQuery = null;
 
@@ -16,16 +16,17 @@ const createSearchQuery = (prop) => {
 				if (searchQuery === value) return;
 				searchQuery = value ?? '';
 				const params = new URLSearchParams(location.search);
-				// Remove ?q= if searchQuery not found */
+				/* Remove ?q= if searchQuery not found */
 				if (searchQuery) params.set(prop, searchQuery);
 				else params.delete(prop);
-				// Form path, redirect to path and push to history */
+				/* Form path, redirect to path and push to history */
 				const query = params.toString();
-				const path = `/blog${query ? `?${query}` : ''}`;
-				goto(path, { keepfocus: true, replaceState, noscroll: true });
+				pathname = pathname ? pathname : location.pathname;
+				const fullPath = `${pathname}${query ? `?${query}` : ''}`;
+				goto(fullPath, { keepfocus: true, replaceState, noscroll: true });
 			}
 		};
 	}
 };
 
-export const searchQuery = createSearchQuery('q');
+export const searchQuery = createSearchQuery('q', '/blog');

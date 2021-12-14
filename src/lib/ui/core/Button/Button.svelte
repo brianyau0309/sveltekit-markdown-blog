@@ -9,7 +9,7 @@
 	class={cx('hover:bg-scolor', 'hover:text-scolor', className)}
 	on:click={(e) => {
 		e.stopPropagation();
-		dispatch('click')
+		dispatch('click');
 	}}
 >
 	<slot />

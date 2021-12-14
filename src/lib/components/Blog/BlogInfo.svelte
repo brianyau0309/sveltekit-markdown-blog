@@ -8,7 +8,7 @@
 	import { BlogDate } from '$components/Blog';
 </script>
 
-<div class={className}>
+<div class={cx('blog-info', className)}>
 	<CategoryButton
 		className={cx(
 			'mb-2',
@@ -22,9 +22,3 @@
 
 	<BlogDate className="text-center" {...{ lastUpdated, createdAt }} />
 </div>
-
-<style type="postcss">
-	div {
-		@apply flex flex-col justify-items-center lg:flex-row lg:justify-between lg:my-3 px-10 lg:px-24 text-2xl lg:text-4xl;
-	}
-</style>

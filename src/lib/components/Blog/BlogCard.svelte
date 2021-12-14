@@ -1,12 +1,9 @@
 <script>
 	export let post;
 	import cx from 'classnames';
-	import { formatDate as fd, curry } from '$utils';
 	import { TagList } from '$components/Tag';
 	import { CategoryButton } from '$components/Category';
 	import { BlogDate } from '$components/Blog';
-
-	const formatDate = curry(fd)('YYYY-MM-DD', 'MMM DD YYYY');
 </script>
 
 <li class={cx('my-3', 'lg:my-5')}>
@@ -17,7 +14,7 @@
 	<BlogDate
 		className={cx('text-base', 'my-2')}
 		lastUpdated={post.metadata.lastUpdated}
-		createAt={post.metadata.createAt}
+		createdAt={post.metadata.createdAt}
 	/>
 
 	<div class="flex">

@@ -3,38 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-	@variants hover, focus {
-		.text-pcolor {
-			@apply text-primary dark:text-primary-darkMode;
-		}
-
-		.text-scolor {
-			@apply text-secondary dark:text-secondary-darkMode;
-		}
-
-		.border-pcolor {
-			@apply border-primary dark:border-primary-darkMode;
-		}
-
-		.border-scolor {
-			@apply border-secondary dark:border-secondary-darkMode;
-		}
-
-		.bg-pcolor {
-			@apply bg-primary dark:bg-primary-darkMode;
-		}
-
-		.bg-scolor {
-			@apply bg-secondary dark:bg-secondary-darkMode;
-		}
-	}
-}
-
 .bg-cate-frontend {
 	@apply bg-category-frontend;
 }
 
 .bg-cate-devops {
 	@apply bg-category-devops;
+}
+
+.blog-info {
+	@apply flex flex-col justify-items-center lg:flex-row lg:justify-between lg:my-3 px-10 lg:px-24 text-2xl lg:text-4xl;
 }

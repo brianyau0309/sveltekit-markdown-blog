@@ -21,7 +21,11 @@ console.log(name);
 ```
 
 # Start a sveltekit project
+
 # Install MDsveX
+
 ## Highlight configuration
+
 # TailWind CSS
+
 # Google font

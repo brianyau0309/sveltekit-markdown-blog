@@ -64,6 +64,30 @@ const config = {
 	plugins: [
 		plugin(({ addUtilities }) => {
 			const newUtilities = {
+				'.text-pcolor': {
+					'@apply text-primary dark:text-primary-darkMode': {}
+				},
+
+				'.text-scolor': {
+					'@apply text-secondary dark:text-secondary-darkMode': {}
+				},
+
+				'.border-pcolor': {
+					'@apply border-primary dark:border-primary-darkMode': {}
+				},
+
+				'.border-scolor': {
+					'@apply border-secondary dark:border-secondary-darkMode': {}
+				},
+
+				'.bg-pcolor': {
+					'@apply bg-primary dark:bg-primary-darkMode': {}
+				},
+
+				'.bg-scolor': {
+					'@apply bg-secondary dark:bg-secondary-darkMode': {}
+				},
+
 				'.no-scrollbar': {
 					'-ms-overflow-style': 'none' /* IE and Edge */,
 					'scrollbar-width': 'none' /* Firefox */

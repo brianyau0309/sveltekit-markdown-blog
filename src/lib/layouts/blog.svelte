@@ -8,9 +8,12 @@
 	export let createdAt;
 	export let lastUpdated;
 	export let tags;
+	export let layout;
 	import { onMount } from 'svelte';
 	import { formTitle } from '$lib/utils';
 	import { BlogCover, BlogContent } from '$lib/components/Blog';
+
+	if (layout !== 'blog') throw new Error('not a blog.');
 
 	let blogCover;
 	let blogContent;

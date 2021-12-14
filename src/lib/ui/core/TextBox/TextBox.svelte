@@ -3,7 +3,7 @@
 	export let value = '';
 	export let labelText = '';
 	export let labelTextSmall = undefined;
-	export let textField;
+	export let textField = undefined;
 	export let debounceTimeout = 0;
 	import cx from 'classnames';
 
@@ -19,7 +19,7 @@
 
 <div>
 	<span
-		class={isFocused || value ? 'minimize' : 'show'}
+		class={isFocused || value ? 'minimize' : 'show lg:text-lg'}
 		on:click={() => textField.focus()}
 		>{(isFocused || value) && labelTextSmall !== undefined
 			? labelTextSmall
@@ -38,18 +38,34 @@
 
 <style type="postcss">
 	span {
-		@apply absolute py-2 px-4 text-gray-500 transition-all;
+		@apply absolute;
+		@apply py-2;
+		@apply px-4;
+		@apply text-gray-500;
+		@apply transition-all;
 	}
 	span.show {
-		@apply pt-3 lg:text-lg cursor-text;
+		@apply pt-3;
+		@apply cursor-text;
 	}
 	span.minimize {
-		@apply pt-1.5 text-xs cursor-auto;
+		@apply pt-1.5;
+		@apply text-xs;
+		@apply cursor-auto;
 	}
 	input {
-		@apply border-gray-700 w-full border-2 rounded py-2 px-4 pt-5 text-sm leading-tight;
+		@apply border-gray-700;
+		@apply w-full;
+		@apply border-2;
+		@apply rounded;
+		@apply py-2;
+		@apply px-4;
+		@apply pt-5;
+		@apply text-sm;
+		@apply leading-tight;
 	}
 	input:focus {
-		@apply border-blue-300 outline-none;
+		@apply border-blue-300;
+		@apply outline-none;
 	}
 </style>

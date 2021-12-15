@@ -5,7 +5,7 @@
 	export let tagClassName = '';
 	import cx from 'classnames';
 	import { TagButton } from '$components/Tag';
-	import { isOverflown, isScrolled, isScrollEnd } from '$lib/utils';
+	import { isOverflown, isScrolled, isScrollEnd } from '$utils/dom';
 	import { browser } from '$app/env';
 
 	let tagList;
@@ -30,8 +30,7 @@
 	on:scroll={() => checkScroll(tagList)}
 	class={cx(
 		'flex',
-		{ 'flex-wrap': !scroll },
-		{ 'overflow-x-scroll': scroll },
+		scroll ? 'overflow-x-scroll' : 'flex-wrap',
 		'items-center',
 		'no-scrollbar',
 		isTagListOverflown

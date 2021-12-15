@@ -1,9 +1,7 @@
 <script>
 	export let posts;
-	import cx from 'classnames';
 	import BlogCard from './BlogCard.svelte';
-	import searchQueryParser from '$lib/utils/search-query-parser';
-	import { searchObject } from '$lib/utils';
+	import { searchQueryParser, searchObject } from '$utils/search';
 	import { searchQuery } from '$stores';
 
 	let filteredPosts = [];
@@ -40,7 +38,7 @@
 	}
 </script>
 
-<ul class={cx('flex', 'flex-col')}>
+<ul class="flex flex-col">
 	{#each filteredPosts as post}
 		<BlogCard {post} />
 	{/each}

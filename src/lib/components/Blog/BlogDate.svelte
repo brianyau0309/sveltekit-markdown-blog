@@ -2,14 +2,15 @@
 	export let lastUpdated;
 	export let createdAt;
 	export let className;
-	import { formatDate as fd, curry } from '$utils';
+	import { formatDate } from '$utils';
+	import { curry } from '$utils/fp';
 
-	const formatDate = curry(fd)('YYYY-MM-DD', 'MMM DD YYYY');
+	const fd = curry(formatDate)('YYYY-MM-DD', 'MMM DD YYYY');
 </script>
 
 <div class={className}>
 	<span>{lastUpdated ? 'Last Updated ' : 'Published '}</span>
 	<span>
-		{lastUpdated ? formatDate(lastUpdated) : formatDate(createdAt)}
+		{lastUpdated ? fd(lastUpdated) : fd(createdAt)}
 	</span>
 </div>

@@ -7,6 +7,7 @@ const config = {
 	purge: ['./src/**/*.{html,js,svelte,ts}'],
 	darkMode: 'class',
 
+	/* TODO: Separate extend theme out */
 	theme: {
 		extend: {
 			fontFamily: {
@@ -61,6 +62,7 @@ const config = {
 		}
 	},
 
+	/* TODO: Refactor plugin system */
 	plugins: [
 		plugin(({ addUtilities }) => {
 			const newUtilities = {

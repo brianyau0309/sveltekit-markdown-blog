@@ -17,7 +17,7 @@ const searchQueryParser = (query, schema = {}) => {
 				...result[values[0]],
 				...values[1].split(',').flat()
 			];
-		/* No prefix */
+			/* No prefix */
 		} else if (values[0]) {
 			if (!result.all) result.all = [];
 			result.all?.push(values[0]);

@@ -1,41 +1,15 @@
 <script>
 	export let posts;
 	import BlogCard from './BlogCard.svelte';
-	import { searchQueryParser, searchObject } from '$utils/search';
+	import { searchEngine, searchSchema } from '$utils/search';
 	import { searchQuery } from '$stores';
 
-	let filteredPosts = [];
-
-	$: {
-		const searchParams = searchQueryParser($searchQuery, {
-			tag: true,
-			category: true
-		});
-		filteredPosts = searchObject(
-			posts.filter(({ metadata }) => !metadata.draft),
-			searchParams,
-			{
-				fields: {
-					all: {
-						paths: [
-							{ path: 'metadata.title', exact: false },
-							{ path: 'metadata.description', exact: false },
-							{ path: 'metadata.tags' },
-							{ path: 'metadata.category' }
-						]
-					},
-					tag: {
-						paths: [{ path: 'metadata.tags' }],
-						relevance: 5
-					},
-					category: {
-						paths: [{ path: 'metadata.category' }],
-						relevance: 100
-					}
-				}
-			}
-		);
-	}
+	let pageNumber = 1;
+	$: filteredPosts = searchEngine(
+		posts,
+		$searchQuery,
+		searchSchema(pageNumber)
+	);
 </script>
 
 <ul class="flex flex-col">

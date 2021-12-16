@@ -1,7 +1,6 @@
 <script>
 	export let draft;
 	if (draft) throw new Error('It is a draft');
-	/* TODO: build error page */
 
 	export let title;
 	export let category;

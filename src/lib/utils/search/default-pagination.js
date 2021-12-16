@@ -4,9 +4,9 @@
  * @param {Number} pageSize Number of item in a page
  * @returns {Array.<Number>} [StartIndex, EndIndex]
  */
-const defaultPagination = (pageNumber, pageSize) => [
-	(pageNumber - 1) * pageSize,
-	pageNumber * pageSize
+const defaultPagination = ({ number, size, increment }) => [
+	increment ? 0 : (number - 1) * size,
+	number * size
 ];
 
 export default defaultPagination;

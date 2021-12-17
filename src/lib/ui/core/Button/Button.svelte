@@ -6,7 +6,11 @@
 </script>
 
 <button
-	class={cx('hover:bg-scolor', 'hover:text-scolor', className)}
+	class={cx(
+		'hover:bg-secondary-with-dark',
+		'hover:text-secondary-with-dark',
+		className
+	)}
 	on:click={(e) => {
 		e.stopPropagation();
 		dispatch('click');

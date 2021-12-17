@@ -7,7 +7,14 @@
 	import Nav from '$lib/components/Nav.svelte';
 </script>
 
-<div class={cx('w-screen', 'min-h-screen', 'text-pcolor', 'bg-pcolor')}>
+<div
+	class={cx(
+		'w-screen',
+		'min-h-screen',
+		'text-primary-with-dark',
+		'bg-primary-with-dark'
+	)}
+>
 	<Nav />
 	<DarkModeButton />
 	<slot />

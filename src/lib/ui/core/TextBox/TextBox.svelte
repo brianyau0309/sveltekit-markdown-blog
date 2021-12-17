@@ -26,7 +26,7 @@
 			: labelText}
 	</span>
 	<input
-		class={cx('text-pcolor', 'bg-pcolor', className)}
+		class={cx('text-primary-with-dark', 'bg-primary-with-dark', className)}
 		type="text"
 		on:focus={() => (isFocused = true)}
 		on:blur={() => (isFocused = false)}

@@ -23,7 +23,7 @@
 				'mr-1',
 				'text-xs',
 				'text-secondary',
-				'hover:bg-scolor',
+				'hover:bg-secondary-with-dark',
 				'bg-category',
 				`bg-cate-${String(post.metadata.category).toLowerCase()}`
 			)}

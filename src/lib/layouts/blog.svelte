@@ -5,12 +5,14 @@
 	export let title;
 	export let category;
 	export let createdAt;
-	export let lastUpdated;
+	export let lastUpdated = undefined;
 	export let tags;
 	export let layout;
+	export let description;
 	import { onMount } from 'svelte';
-	import { formTitle } from '$lib/utils';
-	import { BlogCover, BlogContent } from '$lib/components/Blog';
+	import { formTitle } from '$utils';
+	import { BlogCover, BlogContent } from '$components/Blog';
+	import { Quote } from '$lib/ui/core/Quote';
 
 	if (layout !== 'blog') throw new Error('not a blog.');
 
@@ -30,6 +32,7 @@
 	/>
 
 	<BlogContent bind:blogContent>
+		<Quote text={description} />
 		<slot />
 	</BlogContent>
 </div>

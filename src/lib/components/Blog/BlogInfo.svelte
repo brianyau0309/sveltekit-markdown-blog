@@ -13,7 +13,7 @@
 		className={cx(
 			'mb-2',
 			'text-secondary',
-			'hover:bg-scolor',
+			'hover:bg-secondary-with-dark',
 			'bg-category',
 			`bg-cate-${String(category).toLowerCase()}`
 		)}

@@ -6,11 +6,11 @@
 <div
 	bind:this={blogContent}
 	class={cx(
-		'p-10',
-		'lg:py-60',
-		'lg:px-24',
-		'text-lg',
-		'lg:text-xl',
+		'px-10',
+		'lg:px-64',
+		'text-base',
+		'font-light',
+		'lg:text-lg',
 		'break-words'
 	)}
 >

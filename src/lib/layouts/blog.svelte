@@ -1,3 +1,8 @@
+<script context="module">
+	import { h1 } from './components';
+	export { h1 };
+</script>
+
 <script>
 	export let draft;
 	if (draft) throw new Error('It is a draft');
@@ -8,11 +13,10 @@
 	export let lastUpdated = undefined;
 	export let tags;
 	export let layout;
-	export let description;
+	export let description = '';
 	import { onMount } from 'svelte';
 	import { formTitle } from '$utils';
-	import { BlogCover, BlogContent } from '$components/Blog';
-	import { Quote } from '$lib/ui/core/Quote';
+	import { BlogCover, BlogContent, BlogDescription } from '$components/Blog';
 
 	if (layout !== 'blog') throw new Error('not a blog.');
 
@@ -32,7 +36,7 @@
 	/>
 
 	<BlogContent bind:blogContent>
-		<Quote text={description} />
+		<BlogDescription {description} />
 		<slot />
 	</BlogContent>
 </div>

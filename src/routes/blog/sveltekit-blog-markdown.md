@@ -22,10 +22,12 @@ console.log(name);
 
 # Start a sveltekit project
 
+Testing some text!
+
 # Install MDsveX
 
 ## Highlight configuration
 
-# TailWind CSS
+## Custom Component
 
-# Google font
+# TailWind CSS

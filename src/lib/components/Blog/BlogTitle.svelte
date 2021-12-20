@@ -7,7 +7,7 @@
 <div
 	class={cx(
 		'flex',
-		'flex-grow',
+		'grow',
 		'items-center',
 		'justify-center',
 		'text-5xl',

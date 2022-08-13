@@ -1,14 +1,15 @@
 <script>
 	export let post;
 	import cx from 'classnames';
+	import { slide } from 'svelte/transition';
 	import { TagList } from '$components/Tag';
 	import { CategoryButton } from '$components/Category';
 	import { BlogDate } from '$components/Blog';
 </script>
 
-<li class={cx('my-3', 'lg:my-5')}>
+<li class={cx('my-3', 'lg:my-5')} in:slide out:slide>
 	<div class={cx('text-xl', 'lg:text-2xl', 'underline')}>
-		<a href={`blog/${post.path.replace('.md', '')}`}>{post.metadata.title}</a>
+		<a href={`/${post.path.replace('.md', '')}`}>{post.metadata.title}</a>
 	</div>
 
 	<BlogDate

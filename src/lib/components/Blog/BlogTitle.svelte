@@ -1,10 +1,12 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import cx from 'classnames';
 	export let className = '',
 		title = '';
 </script>
 
 <div
+	in:fade
 	class={cx(
 		'flex',
 		'grow',

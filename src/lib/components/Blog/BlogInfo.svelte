@@ -8,7 +8,21 @@
 	import { BlogDate } from '$components/Blog';
 </script>
 
-<div class={cx('blog-info', className)}>
+<div
+	class={cx(
+		'flex',
+		'flex-col',
+		'justify-items-center',
+		'lg:flex-row',
+		'lg:justify-between',
+		'lg:my-3',
+		'px-10',
+		'lg:px-24',
+		'text-2xl',
+		'lg:text-4xl',
+		className
+	)}
+>
 	<CategoryButton
 		className={cx(
 			'mb-2',

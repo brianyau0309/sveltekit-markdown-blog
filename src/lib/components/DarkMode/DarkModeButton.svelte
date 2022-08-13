@@ -1,12 +1,22 @@
 <script>
 	import { darkMode } from '$stores';
 	import cx from 'classnames';
-	import ThemeMode from '$assets/icons/theme-light-dark.svelte';
-	import { IconButton } from '$lib/ui/core/IconButton';
+	import Button from '$lib/ui/core/Button/Button.svelte';
 </script>
 
-<IconButton
-	className={cx('fixed', 'top-5', 'right-5', 'w-12', 'h-12')}
-	Icon={ThemeMode}
+<Button
+	className={cx(
+		'fixed',
+		'text-xs',
+		'top-7',
+		'right-7',
+		'w-26',
+		'h-8',
+		'bg-secondary-with-dark',
+		'text-secondary-with-dark'
+	)}
+	hoverColor="opacity"
 	on:click={darkMode.toggle}
-/>
+>
+	{$darkMode?.active ? 'LightMode' : 'DarkMode'}
+</Button>

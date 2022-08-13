@@ -11,6 +11,8 @@
 	class={cx(
 		'w-screen',
 		'min-h-screen',
+		'flex',
+		'flex-col',
 		'text-primary-with-dark',
 		'bg-primary-with-dark'
 	)}
@@ -18,4 +20,5 @@
 	<Nav />
 	<DarkModeButton />
 	<slot />
+	<footer class="border-dotted border-black border-t-2">Footer</footer>
 </div>

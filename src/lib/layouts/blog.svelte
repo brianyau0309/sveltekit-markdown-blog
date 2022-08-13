@@ -1,6 +1,5 @@
 <script context="module">
-	import { h1 } from './components';
-	export { h1 };
+	export { h1 } from './components';
 </script>
 
 <script>
@@ -22,7 +21,7 @@
 
 	let blogCover;
 	let blogContent;
-	onMount(() => blogCover.scrollIntoView());
+	onMount(() => setTimeout(() => blogCover.scrollIntoView(), 0));
 </script>
 
 <svelte:head>

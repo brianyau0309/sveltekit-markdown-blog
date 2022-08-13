@@ -8,8 +8,8 @@ const createSearchQuery = (prop, pathname = null) => {
 
 		return {
 			subscribe: (set) =>
-				page.subscribe((p) => {
-					set(p.query.get(prop));
+				page.subscribe(({ url }) => {
+					set(url.searchParams?.get(prop));
 				}),
 			set: (value, { replaceState = false } = {}) => {
 				/* Don't update if same as incoming value */
@@ -29,4 +29,4 @@ const createSearchQuery = (prop, pathname = null) => {
 	}
 };
 
-export const searchQuery = createSearchQuery('q', '/blog');
+export const searchQuery = createSearchQuery('q', '/');

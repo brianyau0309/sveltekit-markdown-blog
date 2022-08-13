@@ -5,7 +5,7 @@
 <nav>
 	<ul>
 		<li>
-			<a href="/blog">{formTitle()?.replace(/\s/g, '')}</a>
+			<a href="/">{formTitle()?.replace(/\s/g, '')}</a>
 		</li>
 	</ul>
 </nav>

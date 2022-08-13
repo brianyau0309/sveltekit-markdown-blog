@@ -11,5 +11,5 @@
 </script>
 
 <Button {className} on:click={handleClick}>
-	{category}
+	{category.toUpperCase()}
 </Button>

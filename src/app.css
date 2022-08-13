@@ -10,7 +10,3 @@
 .bg-cate-devops {
 	@apply bg-category-devops;
 }
-
-.blog-info {
-	@apply flex flex-col justify-items-center lg:flex-row lg:justify-between lg:my-3 px-10 lg:px-24 text-2xl lg:text-4xl;
-}

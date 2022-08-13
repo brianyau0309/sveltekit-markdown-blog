@@ -1,16 +1,15 @@
 <script>
 	export let className = '';
+	export let hoverColor = 'primary';
 	import cx from 'classnames';
 	import { createEventDispatcher } from 'svelte';
+	import { getHoverClassName } from './getHoverClassName';
 	const dispatch = createEventDispatcher();
+	const hoverClassName = getHoverClassName(hoverColor);
 </script>
 
 <button
-	class={cx(
-		'hover:bg-secondary-with-dark',
-		'hover:text-secondary-with-dark',
-		className
-	)}
+	class={cx(...hoverClassName, className)}
 	on:click={(e) => {
 		e.stopPropagation();
 		dispatch('click');

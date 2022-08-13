@@ -9,16 +9,21 @@
 	import { browser } from '$app/env';
 
 	let tagList;
-	let isTagListOverflown;
-	let isTagListScrolled;
-	let isTagListScrollEnd;
+	let blurClass;
 
 	const checkScroll = (ele) => {
+		if (!(browser && ele)) return;
 		const opts = { x: true, y: false };
-		if (browser && ele) {
-			isTagListOverflown = isOverflown(ele, opts);
-			isTagListScrolled = isScrolled(ele, opts);
-			isTagListScrollEnd = isScrollEnd(ele, opts);
+		if (isOverflown(ele, opts)) {
+			if (isScrollEnd(ele, opts)) {
+				blurClass = 'blur-left-edge';
+			} else if (isScrolled(ele, opts)) {
+				blurClass = 'blur-edge';
+			} else {
+				blurClass = 'blur-right-edge';
+			}
+		} else {
+			blurClass = '';
 		}
 	};
 
@@ -33,13 +38,7 @@
 		scroll ? 'overflow-x-scroll' : 'flex-wrap',
 		'items-center',
 		'no-scrollbar',
-		isTagListOverflown
-			? isTagListScrolled
-				? isTagListScrollEnd
-					? 'blur-left-edge'
-					: 'blur-edge'
-				: 'blur-right-edge'
-			: '',
+		blurClass,
 		className
 	)}
 >

@@ -13,7 +13,7 @@
 </script>
 
 <ul class="flex flex-col">
-	{#each filteredPosts as post}
+	{#each filteredPosts as post (post.path)}
 		<BlogCard {post} />
 	{/each}
 </ul>

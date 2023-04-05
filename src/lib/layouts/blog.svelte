@@ -1,5 +1,5 @@
 <script context="module">
-	export { h1 } from './components';
+	// export { h1 } from './components';
 </script>
 
 <script>
@@ -15,7 +15,7 @@
 	export let description = '';
 	import { onMount } from 'svelte';
 	import { formTitle } from '$utils';
-	import { BlogCover, BlogContent, BlogDescription } from '$components/Blog';
+	import { BlogCover, BlogContent } from '$components/Blog';
 
 	if (layout !== 'blog') throw new Error('not a blog.');
 
@@ -34,8 +34,7 @@
 		{...{ blogContent, title, category, createdAt, lastUpdated, tags }}
 	/>
 
-	<BlogContent bind:blogContent>
-		<BlogDescription {description} />
+	<BlogContent bind:blogContent {description}>
 		<slot />
 	</BlogContent>
 </div>

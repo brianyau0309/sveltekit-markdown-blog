@@ -13,10 +13,7 @@ const searchQueryParser = (query, schema = {}) => {
 		/* Have prefix separate by ':' */
 		if (values.length > 1 && schema[values[0]]) {
 			if (!result[values[0]]) result[values[0]] = [];
-			result[values[0]] = [
-				...result[values[0]],
-				...values[1].split(',').flat()
-			];
+			result[values[0]] = [...result[values[0]], ...values[1].split(',').flat()];
 			/* No prefix */
 		} else if (values[0]) {
 			if (!result.all) result.all = [];

@@ -1,18 +1,13 @@
 import { objectPath } from '$utils/fp';
 
 const getProps = (items, exact) => {
-	if (Array.isArray(items))
-		return items?.map((prop) => String(prop).toLowerCase()) ?? [];
+	if (Array.isArray(items)) return items?.map((prop) => String(prop).toLowerCase()) ?? [];
 	if (typeof items === 'string' && exact)
 		return Array(items).map((prop) => String(prop).toLowerCase());
 	return String(items).toLowerCase();
 };
 
-const searchRelated = (
-	items,
-	search,
-	{ fields, keepNotRelated = false } = {}
-) => {
+const searchRelated = (items, search, { fields, keepNotRelated = false } = {}) => {
 	let result = [];
 	for (const item of items) {
 		let relevance = 0;

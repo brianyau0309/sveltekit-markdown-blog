@@ -4,6 +4,9 @@ import path from 'path';
 /** @type {import('vite').UserConfig} */
 const config = {
 	plugins: [sveltekit()],
+	test: {
+		include: ['src/**/*.{test,spec}.{js,ts}']
+	},
 	resolve: {
 		alias: {
 			$components: path.resolve('./src/lib/components'),

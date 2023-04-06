@@ -6,7 +6,7 @@
 	import cx from 'classnames';
 	import { TagButton } from '$components/Tag';
 	import { isOverflown, isScrolled, isScrollEnd } from '$utils/dom';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 
 	let tagList;
 	let blurClass;

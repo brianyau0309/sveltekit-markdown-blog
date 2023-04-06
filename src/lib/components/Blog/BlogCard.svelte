@@ -7,9 +7,9 @@
 	import { BlogDate } from '$components/Blog';
 </script>
 
-<li class={cx('my-3', 'lg:my-5')} in:slide out:slide>
+<li class={cx('my-3', 'lg:my-5')} in:slide out:slide|local>
 	<div class={cx('text-xl', 'lg:text-2xl', 'underline')}>
-		<a href={`/${post.path.replace('.md', '')}`}>{post.metadata.title}</a>
+		<a href={`/${post.path}`}>{post.metadata.title}</a>
 	</div>
 
 	<BlogDate

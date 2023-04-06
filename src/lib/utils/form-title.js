@@ -6,7 +6,6 @@ const titlePrefix = titlePrefixEnv ? String(titlePrefixEnv) : '';
  * @param {String} title
  * @returns {String}
  */
-const formTitle = (title) =>
-	title ? `${title} | ${titlePrefix}` : titlePrefix;
+const formTitle = (title) => (title ? `${title} | ${titlePrefix}` : titlePrefix);
 
 export default formTitle;

@@ -10,7 +10,5 @@ export default (fn) =>
 	 */
 	function curried(...args) {
 		if (typeof fn !== 'function') throw new Error('fn is not a function');
-		return args.length >= fn.length
-			? fn(...args)
-			: (...moreArgs) => curried(...args, ...moreArgs);
+		return args.length >= fn.length ? fn(...args) : (...moreArgs) => curried(...args, ...moreArgs);
 	};

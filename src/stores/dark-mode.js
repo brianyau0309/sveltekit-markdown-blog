@@ -1,11 +1,9 @@
-import { browser } from '$app/env';
+import { browser } from '$app/environment';
 import { persistStore } from '$utils';
 
 const createDarkMode = () => {
 	if (browser) {
-		const prefersDark = window.matchMedia(
-			'(prefers-color-scheme: dark)'
-		).matches;
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 		const { subscribe, update } = persistStore({
 			keyName: 'darkMode',
@@ -21,8 +19,7 @@ const createDarkMode = () => {
 
 		return {
 			subscribe,
-			toggle: () =>
-				update((darkMode) => ({ ...darkMode, active: !darkMode.active }))
+			toggle: () => update((darkMode) => ({ ...darkMode, active: !darkMode.active }))
 		};
 	}
 };

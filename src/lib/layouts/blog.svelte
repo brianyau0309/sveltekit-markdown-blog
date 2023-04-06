@@ -1,8 +1,12 @@
 <script context="module">
-	// export { h1 } from './components';
+	export { h1 } from './components';
 </script>
 
 <script>
+	import { onMount } from 'svelte';
+	import { formTitle } from '$utils';
+	import { BlogCover, BlogContent } from '$components/Blog';
+
 	export let draft;
 	if (draft) throw new Error('It is a draft');
 
@@ -13,15 +17,17 @@
 	export let tags;
 	export let layout;
 	export let description = '';
-	import { onMount } from 'svelte';
-	import { formTitle } from '$utils';
-	import { BlogCover, BlogContent } from '$components/Blog';
+	export let data;
+	export let form;
+
+	// For avoiding unused variables warning
+	data || form;
 
 	if (layout !== 'blog') throw new Error('not a blog.');
 
-	let blogCover;
-	let blogContent;
-	onMount(() => setTimeout(() => blogCover.scrollIntoView(), 0));
+	let blogCoverRef;
+	let blogContentRef;
+	onMount(() => setTimeout(() => blogCoverRef.scrollIntoView(), 0));
 </script>
 
 <svelte:head>
@@ -30,11 +36,11 @@
 
 <div>
 	<BlogCover
-		bind:blogCover
-		{...{ blogContent, title, category, createdAt, lastUpdated, tags }}
+		bind:blogCover={blogCoverRef}
+		{...{ blogContent: blogContentRef, title, category, createdAt, lastUpdated, tags }}
 	/>
 
-	<BlogContent bind:blogContent {description}>
+	<BlogContent bind:blogContent={blogContentRef} {description}>
 		<slot />
 	</BlogContent>
 </div>

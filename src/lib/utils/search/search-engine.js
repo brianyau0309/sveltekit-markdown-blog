@@ -1,4 +1,4 @@
-import { isObject, compose, doNothing } from '$utils/fp';
+import { isObject, compose, identity } from '$utils/fp';
 
 /**
  * Search object in objects
@@ -11,11 +11,9 @@ const searchEngine = (items, searchQuery, schema) => {
 	const { filter, sort, pagination, parser, searcher } = schema;
 	const search = parser.fn(searchQuery, parser.opts);
 	const searchFlow = compose(
-		pagination
-			? (arr) => arr.slice(...pagination.fn(pagination.opts))
-			: doNothing,
-		sort ? (arr) => arr.sort(sort.fn) : doNothing,
-		filter ? (arr) => arr.filter(filter.fn) : doNothing
+		pagination ? (arr) => arr.slice(...pagination.fn(pagination.opts)) : identity,
+		sort ? (arr) => arr.sort(sort.fn) : identity,
+		filter ? (arr) => arr.filter(filter.fn) : identity
 	);
 	if (!isObject(search) || (isObject(search) && !Object.keys(search).length))
 		return searchFlow(items);

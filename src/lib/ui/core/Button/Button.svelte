@@ -9,7 +9,7 @@
 </script>
 
 <button
-	class={cx(...hoverClassName, className)}
+	class={cx('py-1 px-2 rounded-md whitespace-nowrap', ...hoverClassName, className)}
 	on:click={(e) => {
 		e.stopPropagation();
 		dispatch('click');
@@ -17,9 +17,3 @@
 >
 	<slot />
 </button>
-
-<style type="postcss">
-	button {
-		@apply py-1 px-2 rounded-md whitespace-nowrap;
-	}
-</style>

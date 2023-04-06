@@ -5,6 +5,9 @@
 	import '../app.css';
 	import { DarkModeButton } from '$lib/components/DarkMode';
 	import Nav from '$lib/components/Nav.svelte';
+
+	const year = new Date().getFullYear();
+	const title = import.meta.env.VITE_TITLE_PREFIX;
 </script>
 
 <div
@@ -20,5 +23,8 @@
 	<Nav />
 	<DarkModeButton />
 	<slot />
-	<footer class="border-dotted border-black border-t-2">Footer</footer>
+	<footer class={cx('p-2', 'text-center')}>
+		©{year}
+		{title}
+	</footer>
 </div>

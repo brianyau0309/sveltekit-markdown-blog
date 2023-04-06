@@ -18,12 +18,12 @@
 </script>
 
 <div>
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<span
 		class={isFocused || value ? 'minimize' : 'show lg:text-lg'}
 		on:click={() => textField.focus()}
-		>{(isFocused || value) && labelTextSmall !== undefined
-			? labelTextSmall
-			: labelText}
+	>
+		{(isFocused || value) && labelTextSmall !== undefined ? labelTextSmall : labelText}
 	</span>
 	<input
 		class={cx('text-primary-with-dark', 'bg-primary-with-dark', className)}
@@ -38,34 +38,18 @@
 
 <style type="postcss">
 	span {
-		@apply absolute;
-		@apply py-2;
-		@apply px-4;
-		@apply text-gray-500;
-		@apply transition-all;
+		@apply absolute py-2 px-4 text-gray-500 transition-all;
 	}
 	span.show {
-		@apply pt-3;
-		@apply cursor-text;
+		@apply pt-3 cursor-text;
 	}
 	span.minimize {
-		@apply pt-1.5;
-		@apply text-xs;
-		@apply cursor-auto;
+		@apply pt-1.5 text-xs cursor-auto;
 	}
 	input {
-		@apply border-gray-700;
-		@apply w-full;
-		@apply border-2;
-		@apply rounded;
-		@apply py-2;
-		@apply px-4;
-		@apply pt-5;
-		@apply text-sm;
-		@apply leading-tight;
+		@apply border-gray-700 w-full border-2 rounded py-2 px-4 pt-5 text-sm leading-tight;
 	}
 	input:focus {
-		@apply border-blue-300;
-		@apply outline-none;
+		@apply border-blue-300 outline-none;
 	}
 </style>

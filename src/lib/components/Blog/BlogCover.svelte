@@ -12,6 +12,7 @@
 	import { BlogTitle, BlogInfo } from '$lib/components/Blog';
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	bind:this={blogCover}
 	on:click={() => blogContent.scrollIntoView({ behavior: 'smooth' })}
@@ -22,14 +23,7 @@
 	<BlogInfo {...{ category, createdAt, lastUpdated }} />
 
 	<TagList
-		className={cx(
-			'mx-10',
-			'lg:mx-24',
-			'mt-2',
-			'mb-10',
-			'lg:mb-14',
-			'font-medium'
-		)}
+		className={cx('mx-10', 'lg:mx-24', 'mt-2', 'mb-10', 'lg:mb-14', 'font-medium')}
 		tagClassName={cx('text-sm', 'lg:text-lg')}
 		{tags}
 	/>

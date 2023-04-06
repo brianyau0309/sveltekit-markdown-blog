@@ -5,17 +5,9 @@
  * @returns {boolean} isScrollEnd
  */
 const isScrolled = (
-	{
-		scrollTop,
-		scrollHeight,
-		offsetHeight,
-		scrollLeft,
-		scrollWidth,
-		offsetWidth
-	},
+	{ scrollTop, scrollHeight, offsetHeight, scrollLeft, scrollWidth, offsetWidth },
 	{ x = true, y = true } = {}
 ) =>
-	(x && offsetWidth + scrollLeft >= scrollWidth) ||
-	(y && offsetHeight + scrollTop >= scrollHeight);
+	(x && offsetWidth + scrollLeft >= scrollWidth) || (y && offsetHeight + scrollTop >= scrollHeight);
 
 export default isScrolled;

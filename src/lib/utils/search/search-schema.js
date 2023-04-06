@@ -1,9 +1,4 @@
-import {
-	searchRelated,
-	defaultSort,
-	defaultPagination,
-	searchQueryParser
-} from '$utils/search';
+import { searchRelated, defaultSort, defaultPagination, searchQueryParser } from '$utils/search';
 
 const searchSchema = (pageNumber = 1) => ({
 	filter: { fn: ({ metadata }) => !metadata.draft },

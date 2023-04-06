@@ -5,11 +5,7 @@
 	import { searchQuery } from '$stores';
 
 	let pageNumber = 1;
-	$: filteredPosts = searchEngine(
-		posts,
-		$searchQuery,
-		searchSchema(pageNumber)
-	);
+	$: filteredPosts = searchEngine(posts, $searchQuery, searchSchema(pageNumber));
 </script>
 
 <ul class="flex flex-col">

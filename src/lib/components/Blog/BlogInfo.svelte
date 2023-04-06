@@ -25,6 +25,7 @@
 >
 	<CategoryButton
 		className={cx(
+			'py-2',
 			'mb-2',
 			'text-secondary',
 			'bg-category',

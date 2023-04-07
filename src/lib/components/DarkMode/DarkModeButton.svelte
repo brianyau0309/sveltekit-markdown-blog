@@ -6,7 +6,6 @@
 
 <Button
 	className={cx(
-		'fixed',
 		'text-xs',
 		'top-7',
 		'right-7',
@@ -15,6 +14,7 @@
 		'bg-secondary-with-dark',
 		'text-secondary-with-dark'
 	)}
+	style="position: fixed !important"
 	hoverColor="opacity"
 	on:click={darkMode.toggle}
 >

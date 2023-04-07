@@ -5,4 +5,4 @@
 	import { Quote } from '$lib/ui/core/Quote';
 </script>
 
-<Quote className={cx('mt-2', 'mb-10', 'lg:text-base', className)} text={description} />
+<Quote className={cx('my-12', 'md:mx-2', 'lg:text-base', className)} text={description} />

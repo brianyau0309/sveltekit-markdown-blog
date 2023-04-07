@@ -5,7 +5,7 @@
 	import { searchQuery } from '$stores';
 
 	const handleClick = () => {
-		searchQuery.set(`tag:${tag}`);
+		searchQuery.set(`tag:${tag}`, { force: true });
 	};
 </script>
 

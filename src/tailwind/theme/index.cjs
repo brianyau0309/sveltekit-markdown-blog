@@ -24,7 +24,8 @@ const theme = {
 			category: {
 				DEFAULT: '#667EEA',
 				frontend: '#065F46',
-				devops: '#000'
+				devops: '#000',
+				bug: '#F56565'
 			}
 		},
 		textColor: {

@@ -38,18 +38,18 @@
 
 <style type="postcss">
 	span {
-		@apply absolute py-2 px-4 text-gray-500 transition-all;
+		@apply absolute px-4 py-2 text-gray-500 transition-all;
 	}
 	span.show {
-		@apply pt-3 cursor-text;
+		@apply cursor-text pt-3;
 	}
 	span.minimize {
-		@apply pt-1.5 text-xs cursor-auto;
+		@apply cursor-auto pt-1.5 text-xs;
 	}
 	input {
-		@apply border-gray-700 w-full border-2 rounded py-2 px-4 pt-5 text-sm leading-tight;
+		@apply w-full rounded border-2 border-gray-700 px-4 py-2 pt-5 text-sm leading-tight;
 	}
 	input:focus {
-		@apply border-blue-300 outline-none;
+		@apply border-blue-900 outline-none;
 	}
 </style>

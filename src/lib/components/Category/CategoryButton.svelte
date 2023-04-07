@@ -5,7 +5,7 @@
 	import { searchQuery } from '$stores';
 
 	const handleClick = () => {
-		searchQuery.set(`category:${category}`);
+		searchQuery.set(`category:${category}`, { force: true });
 	};
 </script>
 

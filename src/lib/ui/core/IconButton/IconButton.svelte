@@ -11,6 +11,6 @@
 
 <style type="postcss">
 	button {
-		@apply p-2 rounded-full;
+		@apply rounded-full p-2;
 	}
 </style>

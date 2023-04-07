@@ -11,8 +11,8 @@
 
 <style type="postcss">
 	blockquote {
-		padding-left: 1em;
 		border-left: 0.2em solid;
+		padding-left: 1em;
 		font-weight: 500;
 	}
 </style>

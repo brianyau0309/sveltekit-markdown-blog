@@ -11,9 +11,9 @@ const createSearchQuery = (prop, pathname = null) => {
 				page.subscribe(({ url }) => {
 					set(url.searchParams?.get(prop));
 				}),
-			set: (value, { replaceState = false } = {}) => {
+			set: (value, { replaceState = false, force = false } = {}) => {
 				/* Don't update if same as incoming value */
-				if (searchQuery === value) return;
+				if (!force && searchQuery === value) return;
 				searchQuery = value ?? '';
 				const params = new URLSearchParams(location.search);
 				/* Remove ?q= if searchQuery not found */

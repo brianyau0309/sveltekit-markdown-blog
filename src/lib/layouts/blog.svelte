@@ -36,11 +36,11 @@
 
 <div>
 	<BlogCover
-		bind:blogCover={blogCoverRef}
-		{...{ blogContent: blogContentRef, title, category, createdAt, lastUpdated, tags }}
+		bind:blogCoverRef
+		{...{ blogContentRef, title, category, createdAt, lastUpdated, tags }}
 	/>
 
-	<BlogContent bind:blogContent={blogContentRef} {description}>
+	<BlogContent bind:blogContentRef {description}>
 		<slot />
 	</BlogContent>
 </div>

@@ -23,7 +23,7 @@
 	<Nav />
 	<DarkModeButton />
 	<slot />
-	<footer class={cx('p-2', 'text-center')}>
+	<footer class={cx('mt-12', 'mb-4', 'text-center')}>
 		©{year}
 		{title}
 	</footer>

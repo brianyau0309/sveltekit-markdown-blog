@@ -10,3 +10,29 @@
 .bg-cate-devops {
 	@apply bg-category-devops;
 }
+
+.bg-cate-bug {
+	@apply bg-category-bug;
+}
+
+@layer base {
+	body {
+		@apply bg-primary dark:bg-secondary;
+	}
+	/* Scroll bar stylings */
+	::-webkit-scrollbar {
+		width: 5px;
+		height: 5px;
+	}
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		border-radius: 0.25rem;
+		background: #666;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #444;
+	}
+	::-webkit-scrollbar-thumb:active {
+		background: #333;
+	}
+}

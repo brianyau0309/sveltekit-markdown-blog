@@ -1,6 +1,6 @@
 <script>
 	export let post;
-	import cx from 'classnames';
+	import { cx } from '$cx';
 	import { slide } from 'svelte/transition';
 	import { TagList } from '$components/Tag';
 	import { CategoryButton } from '$components/Category';

@@ -4,7 +4,7 @@
 	export let labelTextSmall = undefined;
 	export let textField = undefined;
 	export let debounceTimeout = 0;
-	import cx from 'classnames';
+	import { cx } from '$cx';
 
 	let isFocused;
 	let timer;

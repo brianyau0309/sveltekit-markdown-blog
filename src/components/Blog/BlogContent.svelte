@@ -1,7 +1,7 @@
 <script>
 	export let blogContentRef = undefined;
 	export let description = '';
-	import cx from 'classnames';
+	import { cx } from '$cx';
 	import BlogDescription from './BlogDescription.svelte';
 </script>
 

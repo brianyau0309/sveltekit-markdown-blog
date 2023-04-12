@@ -11,16 +11,14 @@
 		"strict": true,
 		"baseUrl": ".",
 		"paths": {
-			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"],
-			"$utils": ["src/lib/utils"],
-			"$utils/*": ["src/lib/utils/*"],
-			"$components": ["src/lib/components"],
-			"$components/*": ["src/lib/components/*"],
-			"$dayjs": ["src/lib/dayjs"],
+			"$lib": ["./src/lib"],
+			"$lib/*": ["./src/lib/*"],
+			"$utils/*": ["src/utils/*"],
+			"$components/*": ["src/components/*"],
 			"$stores": ["src/stores"],
-			"$assets": ["src/assets/"],
-			"$assets/*": ["src/assets/*"]
+			"$assets/*": ["src/assets/*"],
+			"$dayjs": ["src/lib/dayjs"],
+			"$cx": ["src/lib/cx"]
 		}
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]

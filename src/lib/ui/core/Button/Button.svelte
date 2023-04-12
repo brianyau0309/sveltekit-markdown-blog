@@ -2,7 +2,7 @@
 	export let hoverColor = 'primary';
 	export let style = '';
 
-	import cx from 'classnames';
+	import { cx } from '$cx';
 	import { createEventDispatcher } from 'svelte';
 	import Ripple from '../Ripple/Ripple.svelte';
 	import type { SvelteMouseEvent } from '../SvelteEvent';

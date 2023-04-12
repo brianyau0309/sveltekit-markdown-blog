@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	import { formTitle } from '$lib/utils';
+	import { formTitle } from '$utils';
 	import { BlogList } from '$components/Blog';
 	import { SearchBox } from '$components/SearchBox';
 </script>

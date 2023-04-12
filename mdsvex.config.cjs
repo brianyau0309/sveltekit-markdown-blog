@@ -11,7 +11,7 @@ const config = {
 	},
 
 	layout: {
-		blog: join(__dirname, './src/lib/layouts/blog.svelte')
+		blog: join(__dirname, './src/layouts/blog.svelte')
 	},
 
 	remarkPlugins: [],

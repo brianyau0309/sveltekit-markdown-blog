@@ -1,10 +1,10 @@
 <script>
-	import cx from 'classnames';
-	import '$lib/css/google-font-raleway.css';
-	import '$lib/css/prism-vsc-dark-plus.css';
-	import '../app.css';
-	import { DarkModeButton } from '$lib/components/DarkMode';
-	import Nav from '$lib/components/Nav.svelte';
+	import { DarkModeButton } from '$components/DarkMode';
+	import Nav from '$components/Nav.svelte';
+	import { cx } from '$cx';
+	import './css/app.css';
+	import './css/google-font-raleway.css';
+	import './css/prism-vsc-dark-plus.css';
 
 	const year = new Date().getFullYear();
 	const title = import.meta.env.VITE_TITLE_PREFIX;

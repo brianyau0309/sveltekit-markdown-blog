@@ -3,15 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-cate-frontend {
+/* Category colors, preventing color shrink by cssnano */
+.hack-bg-category-frontend {
 	@apply bg-category-frontend;
 }
-
-.bg-cate-devops {
+.hack-bg-category-devops {
 	@apply bg-category-devops;
 }
-
-.bg-cate-bug {
+.hack-bg-category-bug {
 	@apply bg-category-bug;
 }
 

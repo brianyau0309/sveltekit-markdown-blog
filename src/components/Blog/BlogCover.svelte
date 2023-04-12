@@ -7,9 +7,9 @@
 	export let blogContentRef = undefined;
 	export let blogCoverRef = undefined;
 
-	import cx from 'classnames';
-	import { TagList } from '$lib/components/Tag';
-	import { BlogTitle, BlogInfo } from '$lib/components/Blog';
+	import { cx } from '$cx';
+	import { TagList } from '$components/Tag';
+	import { BlogTitle, BlogInfo } from '$components/Blog';
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

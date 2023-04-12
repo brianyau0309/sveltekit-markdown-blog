@@ -1,5 +1,5 @@
 <script>
-	import { formTitle } from '$lib/utils';
+	import { formTitle } from '$utils';
 </script>
 
 <nav>

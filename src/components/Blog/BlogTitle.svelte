@@ -1,6 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import cx from 'classnames';
+	import { cx } from '$cx';
 	export let title = '';
 </script>
 

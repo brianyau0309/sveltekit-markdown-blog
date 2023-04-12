@@ -9,11 +9,13 @@ const config = defineConfig({
 	},
 	resolve: {
 		alias: {
-			$components: path.resolve('./src/lib/components'),
-			$utils: path.resolve('./src/lib/utils'),
-			$dayjs: path.resolve('./src/lib/dayjs'),
+			$components: path.resolve('./src/components'),
+			$utils: path.resolve('./src/utils'),
 			$stores: path.resolve('./src/stores'),
-			$assets: path.resolve('./src/assets')
+			$assets: path.resolve('./src/assets'),
+
+			$dayjs: path.resolve('./src/lib/dayjs'),
+			$cx: path.resolve('./src/lib/cx')
 		}
 	}
 });

@@ -1,6 +1,6 @@
 <script>
 	export let category = '';
-	import cx from 'classnames';
+	import { cx } from '$cx';
 	import { Button } from '$lib/ui/core/Button';
 	import { searchQuery } from '$stores';
 
@@ -13,7 +13,7 @@
 	class={cx(
 		'text-secondary',
 		'bg-category',
-		`bg-cate-${String(category).toLowerCase()}`,
+		`hack-bg-category-${String(category).toLowerCase()}`,
 		$$props.class ?? ''
 	)}
 	on:click={handleClick}

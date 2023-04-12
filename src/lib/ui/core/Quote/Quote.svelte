@@ -1,6 +1,6 @@
 <script>
 	export let text;
-	import cx from 'classnames';
+	import { cx } from '$cx';
 </script>
 
 <blockquote class={cx('border-primary-darkMode', $$props.class)}>

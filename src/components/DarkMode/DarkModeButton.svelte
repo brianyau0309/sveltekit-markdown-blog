@@ -1,6 +1,6 @@
 <script>
 	import { darkMode } from '$stores';
-	import cx from 'classnames';
+	import { cx } from '$cx';
 	import Button from '$lib/ui/core/Button/Button.svelte';
 </script>
 

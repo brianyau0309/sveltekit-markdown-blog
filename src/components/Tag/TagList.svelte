@@ -2,7 +2,7 @@
 	export let tags;
 	export let scroll = true;
 	export let tagClass = '';
-	import cx from 'classnames';
+	import { cx } from '$cx';
 	import { TagButton } from '$components/Tag';
 	import { isOverflown, isScrolled, isScrollEnd } from '$utils/dom';
 	import { browser } from '$app/environment';

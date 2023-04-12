@@ -2,7 +2,7 @@
 	export let category;
 	export let createdAt;
 	export let lastUpdated;
-	import cx from 'classnames';
+	import { cx } from '$cx';
 	import { CategoryButton } from '$components/Category';
 	import { BlogDate } from '$components/Blog';
 </script>

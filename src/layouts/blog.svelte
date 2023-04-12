@@ -32,6 +32,7 @@
 		if (window?.pageYOffset === 0)
 			setTimeout(() => {
 				blogCoverRef.scrollIntoView();
+				blogCoverRef.focus();
 			}, 0);
 	});
 </script>

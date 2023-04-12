@@ -5,14 +5,15 @@
 </script>
 
 <Button
-	className={cx(
+	class={cx(
 		'text-xs',
 		'top-7',
 		'right-7',
 		'w-26',
 		'h-8',
 		'bg-secondary-with-dark',
-		'text-secondary-with-dark'
+		'text-secondary-with-dark',
+		'z-40'
 	)}
 	style="position: fixed !important"
 	hoverColor="opacity"

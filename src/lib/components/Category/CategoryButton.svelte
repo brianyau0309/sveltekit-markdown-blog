@@ -1,6 +1,6 @@
 <script>
 	export let category = '';
-	export let className = '';
+	import cx from 'classnames';
 	import { Button } from '$lib/ui/core/Button';
 	import { searchQuery } from '$stores';
 
@@ -9,6 +9,14 @@
 	};
 </script>
 
-<Button {className} on:click={handleClick}>
+<Button
+	class={cx(
+		'text-secondary',
+		'bg-category',
+		`bg-cate-${String(category).toLowerCase()}`,
+		$$props.class ?? ''
+	)}
+	on:click={handleClick}
+>
 	{category.toUpperCase()}
 </Button>

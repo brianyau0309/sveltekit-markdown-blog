@@ -13,24 +13,14 @@
 	</div>
 
 	<BlogDate
-		className={cx('text-base', 'my-2')}
+		class={cx('text-base', 'my-2')}
 		lastUpdated={post.metadata.lastUpdated}
 		createdAt={post.metadata.createdAt}
 	/>
 
 	<div class="flex">
-		<CategoryButton
-			className={cx(
-				'mr-1',
-				'text-xs',
-				'text-secondary',
-				'hover:bg-secondary-with-dark',
-				'bg-category',
-				`bg-cate-${String(post.metadata.category).toLowerCase()}`
-			)}
-			category={post.metadata.category}
-		/>
+		<CategoryButton class={cx('mr-1', 'text-xs')} category={post.metadata.category} />
 
-		<TagList tags={post.metadata.tags} tagClassName="text-xs" />
+		<TagList tags={post.metadata.tags} tagClass="text-xs" />
 	</div>
 </li>

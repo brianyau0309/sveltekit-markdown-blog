@@ -1,8 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import cx from 'classnames';
-	export let className = '',
-		title = '';
+	export let title = '';
 </script>
 
 <div
@@ -17,7 +16,7 @@
 		'lg:text-9xl',
 		'lg:text-center',
 		'px-10',
-		className
+		$$props.class
 	)}
 >
 	{title}

@@ -27,7 +27,13 @@
 
 	let blogCoverRef;
 	let blogContentRef;
-	onMount(() => setTimeout(() => blogCoverRef.scrollIntoView(), 0));
+
+	onMount(() => {
+		if (window?.pageYOffset === 0)
+			setTimeout(() => {
+				blogCoverRef.scrollIntoView();
+			}, 0);
+	});
 </script>
 
 <svelte:head>

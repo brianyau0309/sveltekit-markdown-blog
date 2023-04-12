@@ -1,8 +1,7 @@
 <script>
 	export let tags;
 	export let scroll = true;
-	export let className = '';
-	export let tagClassName = '';
+	export let tagClass = '';
 	import cx from 'classnames';
 	import { TagButton } from '$components/Tag';
 	import { isOverflown, isScrolled, isScrollEnd } from '$utils/dom';
@@ -39,11 +38,11 @@
 		'items-center',
 		'no-scrollbar',
 		blurClass,
-		className
+		$$props.class
 	)}
 >
 	{#each tags as tag}
-		<TagButton className={tagClassName} {tag} />
+		<TagButton class={tagClass} {tag} />
 	{/each}
 </div>
 

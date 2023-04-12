@@ -1,8 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import path from 'path';
+import { defineConfig } from 'vite';
 
-/** @type {import('vite').UserConfig} */
-const config = {
+const config = defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
@@ -16,6 +16,6 @@ const config = {
 			$assets: path.resolve('./src/assets')
 		}
 	}
-};
+});
 
 export default config;

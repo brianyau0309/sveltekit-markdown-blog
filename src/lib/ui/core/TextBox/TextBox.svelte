@@ -1,5 +1,4 @@
 <script>
-	export let className = '';
 	export let value = '';
 	export let labelText = '';
 	export let labelTextSmall = undefined;
@@ -26,7 +25,7 @@
 		{(isFocused || value) && labelTextSmall !== undefined ? labelTextSmall : labelText}
 	</span>
 	<input
-		class={cx('text-primary-with-dark', 'bg-primary-with-dark', className)}
+		class={cx('text-primary-with-dark', 'bg-primary-with-dark', $$props.class)}
 		type="text"
 		on:focus={() => (isFocused = true)}
 		on:blur={() => (isFocused = false)}

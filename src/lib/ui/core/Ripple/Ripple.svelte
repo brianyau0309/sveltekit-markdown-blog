@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+	import type { SvelteMouseEvent } from '../SvelteEvent';
+
 	// Props
 	export let isRippling = false;
 
@@ -7,13 +9,13 @@
 	let rippleLeft = 0;
 
 	// Action
-	export function ripple(event) {
+	export function ripple(event: SvelteMouseEvent) {
 		try {
 			isRippling = true;
 			rippleLeft = event.clientX - event.currentTarget.offsetLeft;
 			rippleTop = event.clientY - event.currentTarget.offsetTop;
 		} finally {
-			setTimeout(() => (isRippling = false), 350);
+			setTimeout(() => (isRippling = false), 300);
 		}
 	}
 </script>
@@ -24,13 +26,13 @@
 
 <style lang="postcss">
 	.ripple {
-		@apply absolute -ml-12 -mt-12 h-24 w-24 rounded-full bg-primary bg-opacity-20 opacity-0 dark:bg-gray-400;
+		@apply absolute -ml-12 -mt-12 h-24 w-24 rounded-full bg-primary bg-opacity-100 opacity-0 dark:bg-gray-500;
 		animation: ripple 1s;
 	}
 	@keyframes ripple {
 		from {
 			transform: scale(0);
-			opacity: 1;
+			opacity: 0.6;
 		}
 		to {
 			transform: scale(10);

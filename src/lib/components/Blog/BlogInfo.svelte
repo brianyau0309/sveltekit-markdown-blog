@@ -1,5 +1,4 @@
 <script>
-	export let className = '';
 	export let category;
 	export let createdAt;
 	export let lastUpdated;
@@ -20,19 +19,10 @@
 		'lg:px-24',
 		'text-2xl',
 		'lg:text-4xl',
-		className
+		$$props.class
 	)}
 >
-	<CategoryButton
-		className={cx(
-			'py-2',
-			'mb-2',
-			'text-secondary',
-			'bg-category',
-			`bg-cate-${String(category).toLowerCase()}`
-		)}
-		{category}
-	/>
+	<CategoryButton class={cx('py-2', 'mb-2')} {category} />
 
-	<BlogDate className="text-center" {...{ lastUpdated, createdAt }} />
+	<BlogDate class="text-center" {...{ lastUpdated, createdAt }} />
 </div>

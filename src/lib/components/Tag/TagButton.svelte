@@ -1,6 +1,5 @@
 <script>
 	export let tag = '';
-	export let className = '';
 	import { Button } from '$lib/ui/core/Button';
 	import { searchQuery } from '$stores';
 
@@ -9,6 +8,6 @@
 	};
 </script>
 
-<Button {className} on:click={handleClick}>
+<Button class={$$props.class ?? ''} on:click={handleClick}>
 	#{tag}
 </Button>

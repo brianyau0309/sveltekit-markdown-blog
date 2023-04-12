@@ -1,11 +1,10 @@
 <script>
-	export let className;
 	import { TextBox } from '$lib/ui/core/TextBox';
 	import { searchQuery } from '$stores';
 	let textField;
 </script>
 
-<div class={className}>
+<div class={$$props.class}>
 	<TextBox
 		bind:textField
 		bind:value={$searchQuery}

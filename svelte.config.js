@@ -1,7 +1,7 @@
-import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.cjs';
 import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,12 +11,7 @@ const config = {
 		adapter: adapter()
 	},
 
-	preprocess: [
-		mdsvex(mdsvexConfig),
-		preprocess({
-			postcss: true
-		})
-	]
+	preprocess: [mdsvex(mdsvexConfig), vitePreprocess()]
 };
 
 export default config;

@@ -16,15 +16,15 @@
 <div
 	bind:this={blogCoverRef}
 	on:click={() => blogContentRef.scrollIntoView({ behavior: 'smooth' })}
-	class={cx('w-full', 'min-h-screen', 'font-bold', 'flex', 'flex-col')}
+	class={cx('w-full', 'min-h-screen', 'font-bold', 'flex', 'flex-col', 'md:cursor-pointer')}
 >
 	<BlogTitle {title} />
 
 	<BlogInfo {...{ category, createdAt, lastUpdated }} />
 
 	<TagList
-		className={cx('mx-10', 'lg:mx-24', 'mt-2', 'mb-10', 'lg:mb-14', 'font-medium')}
-		tagClassName={cx('text-sm', 'lg:text-lg')}
+		class={cx('mx-10', 'lg:mx-24', 'mt-2', 'mb-10', 'lg:mb-14', 'font-medium')}
+		tagClass={cx('text-sm', 'lg:text-lg')}
 		{tags}
 	/>
 </div>
